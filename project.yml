@@ -1,0 +1,35 @@
+name: CinemaClub
+options:
+  bundleIdPrefix: com.polytech
+  deploymentTarget:
+    iOS: "17.0"
+configs:
+  Debug:
+    release: false
+    bundleIdSuffix: debug
+    buildSettings:
+      SWIFT_OPTIMIZATION_LEVEL: '-Onone'
+  Release:
+    release: true
+    bundleIdSuffix: release
+    buildSettings:
+      SWIFT_OPTIMIZATION_LEVEL: '-Owholemodule'
+targets:
+  CinemaClub:
+    type: application
+    platform: iOS
+    sources: [CinemaClub]
+    postCompileScripts:
+      - script: |
+          sh swiftlint.sh
+        name: Swiftlint
+    settings:
+      base:
+        INFO_PLIST_FILE: CinemaClub/Info.plist
+      configurations:
+        Debug:
+          PROVISIONING_PROFILE_SPECIFIER: "Debug Provisioning Profile"
+        Release:
+          PROVISIONING_PROFILE_SPECIFIER: "Release Provisioning Profile"
+
+
