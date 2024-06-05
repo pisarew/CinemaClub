@@ -1,9 +1,9 @@
 import SwiftUI
 
-struct WelcomeView: View {
+struct FirstLogin: View {
     var body: some View {
         ZStack {
-            Image("education")
+            Image("image")
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
@@ -44,13 +44,13 @@ struct WelcomeView: View {
                 .padding(.horizontal, 20)
                 .padding(.bottom, 40)
             }
-            .padding(.top, 420) 
+            .padding(.top, 420)
         }
     }
 }
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView()
+        FirstLogin()
     }
 }
