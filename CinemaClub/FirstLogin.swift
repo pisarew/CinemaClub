@@ -11,7 +11,7 @@ struct FirstLogin: View {
             VStack {
                 Spacer()
                 
-                Image("App Icon")
+                Image("App-Icon")
                     .resizable()
                     .frame(width: 100, height: 100)
                     .padding(.bottom, 5)
