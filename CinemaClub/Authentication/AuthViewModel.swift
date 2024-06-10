@@ -14,7 +14,7 @@ import Foundation
     var verificationError: String?
     var isAuth = false
     
-    func sendCode() async {
+    func sendCode() {
         AuthService.shared.sendCode(to: user.phone) { [weak self] result in
             switch result {
             case .success(let verificationID):

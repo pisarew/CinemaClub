@@ -18,17 +18,19 @@ struct PhoneInputView: View {
                     .keyboardType(.phonePad)
                 
                 Button {
-                    Task {
-                        await viewModel.sendCode()
+                    viewModel.sendCode()
+                    if viewModel.verificationID != nil {
+                        codeInputViewActive = true
+                    } else {
+                        print(viewModel.verificationError ?? "aa")
                     }
-                    codeInputViewActive.toggle()
                 } label: {
                     Text("Отправить код")
                 }
             }
-        }
-        .navigationDestination(isPresented: $codeInputViewActive) {
-            CodeInputView(viewModel: viewModel)
+            .navigationDestination(isPresented: $codeInputViewActive) {
+                CodeInputView(viewModel: viewModel)
+            }
         }
     }
 }

@@ -26,10 +26,11 @@ struct CodeInputView: View {
                     Text("Отправить код")
                 }
             }
+            .navigationDestination(isPresented: $nameInputViewActive) {
+                NameInputView()
+            }
         }
-        .navigationDestination(isPresented: $nameInputViewActive) {
-            NameInputView()
-        }
+        
     }
 }
 
