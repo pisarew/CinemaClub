@@ -9,23 +9,85 @@ import SwiftUI
 
 struct CodeInputView: View {
     @Bindable var viewModel: AuthViewModel
+    @State private var nameInputViewActive = false
+    @State private var code: [String] = Array(repeating: "", count: 6)
+    @FocusState private var focusedField: Int?
     
     var body: some View {
         NavigationStack {
             VStack {
-                TextField("Введите код", text: $viewModel.verificationCode)
-                    .keyboardType(.phonePad)
+                Text("Введите код")
+                    .font(.largeTitle)
+                    .fontWeight(.regular)
+                    .padding(.bottom, 10)
+                Text("Код был отправлен на номер:")
+                    .foregroundColor(.secondary)
+                
+                Text("+7 965 212 64 14")
+                    .foregroundColor(.black)
+                    .padding(.bottom, 20)
+                
+                HStack(spacing: 10) {
+                    ForEach(0..<6) { index in
+                        CodeSquare(index: index, code: $code, focusedField: $focusedField)
+                    }
+                }
+                .padding(.bottom, 20)
+                
                 Button {
-                    viewModel.verifyCode()  
+                    viewModel.verificationCode = code.joined()
+                    viewModel.verifyCode()
+                    if viewModel.isAuth {
+                        nameInputViewActive.toggle()
+                    }
                 } label: {
                     Text("Отправить код")
+                        .foregroundColor(.red)
                 }
             }
-            .navigationDestination(isPresented: $viewModel.isAuth) {
-                NameInputView()
+        }
+        .navigationDestination(isPresented: $nameInputViewActive) {
+            NameInputView()
+        }
+        .onAppear {
+            focusedField = 0
+        }
+    }
+}
+
+struct CodeSquare: View {
+    var index: Int
+    @Binding var code: [String]
+    @FocusState.Binding var focusedField: Int?
+    
+    var body: some View {
+        TextField("", text: Binding(
+            get: { code[index] },
+            set: { newValue in
+                if newValue.count > 1 {
+                    code[index] = String(newValue.prefix(1))
+                } else {
+                    code[index] = newValue
+                }
+                
+                if !newValue.isEmpty {
+                    focusedField = min(index + 1, 5)
+                }
+            })
+        )
+        .frame(width: 50, height: 50)
+        .background(Color.gray.opacity(0.2))
+        .cornerRadius(5)
+        .multilineTextAlignment(.center)
+        .keyboardType(.numberPad)
+        .focused($focusedField, equals: index)
+        .onChange(of: focusedField) { oldValue, newValue in
+            if newValue == index {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    focusedField = index
+                }
             }
         }
-        
     }
 }
 
