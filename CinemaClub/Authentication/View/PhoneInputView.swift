@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct PhoneInputView: View {
-    @State private var viewModel = AuthViewModel()
-    @State private var codeInputViewActive = false
+    @Bindable private var viewModel = AuthViewModel()
     @State private var selectedCountryCode = "+7"
     @State private var phoneNumber = ""
     
@@ -40,9 +39,9 @@ struct PhoneInputView: View {
                 HStack {
                     Menu {
                         ForEach(countryCodes, id: \.1) { flag, code in
-                            Button(action: {
+                            Button {
                                 selectedCountryCode = code
-                            }) {
+                            } label: {
                                 HStack {
                                     Text(flag)
                                     Text(code)
@@ -72,10 +71,7 @@ struct PhoneInputView: View {
                 
                 Button {
                     viewModel.user.phone = selectedCountryCode + phoneNumber
-                    Task {
-                        await viewModel.sendCode()
-                    }
-                    codeInputViewActive.toggle()
+                    viewModel.sendCode()
                 } label: {
                     Text("Отправить код")
                         .font(.system(size: 17, weight: .regular))
@@ -102,8 +98,9 @@ struct PhoneInputView: View {
                 Spacer()
                 
                 VStack(spacing: 10) {
-                    Button(action: {
-                    }) {
+                    Button {
+                        
+                    } label: {
                         HStack {
                             Image(systemName: "applelogo")
                                 .foregroundColor(Color.red)
@@ -117,8 +114,10 @@ struct PhoneInputView: View {
                         .cornerRadius(10)
                     }
                     .padding(.horizontal)
-                    Button(action: {
-                    }) {
+                    
+                    Button {
+                        
+                    } label: {
                         HStack {
                             Image(systemName: "globe")
                                 .foregroundColor(Color.red)
@@ -135,9 +134,9 @@ struct PhoneInputView: View {
                 }
                 .padding(.bottom, 20)
             }
-        }
-        .navigationDestination(isPresented: $codeInputViewActive) {
-            CodeInputView(viewModel: viewModel)
+            .navigationDestination(isPresented: $viewModel.isVerificationId) {
+                CodeInputView(viewModel: viewModel)
+            }
         }
     }
 }

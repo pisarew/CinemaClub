@@ -14,6 +14,7 @@ final class AuthService {
     private init() {}
     
     func sendCode(to number: String, completion: @escaping (Result<String, Error>) -> Void) {
+        Auth.auth().settings?.isAppVerificationDisabledForTesting = true
         PhoneAuthProvider.provider().verifyPhoneNumber(number, uiDelegate: nil) { verificationId, error in
             if let error = error {
                 completion(.failure(error))
