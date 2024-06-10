@@ -13,12 +13,14 @@ import Foundation
     var verificationID: String?
     var verificationError: String?
     var isAuth = false
+    var isVerificationId = false
     
     func sendCode() {
         AuthService.shared.sendCode(to: user.phone) { [weak self] result in
             switch result {
             case .success(let verificationID):
                 self?.verificationID = verificationID
+                self?.isVerificationId = true
             case .failure(let error):
                 self?.verificationError = error.localizedDescription
                 print(error.localizedDescription)
@@ -40,7 +42,7 @@ import Foundation
             switch result {
             case .success(let user):
                 self?.user = user
-                self?._isAuth = true
+                self?.isAuth = true
             case .failure(let error):
                 self?.verificationError = error.localizedDescription
                 print(error.localizedDescription)

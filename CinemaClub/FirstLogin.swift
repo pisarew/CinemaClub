@@ -22,7 +22,7 @@ struct FirstLogin: View {
                     .foregroundColor(.black)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)
-
+                
                 Text("Пиши рецензии, оставляй лайки и общайся с друзьями в одном приложении!")
                     .font(.body)
                     .foregroundColor(.gray)
@@ -31,8 +31,9 @@ struct FirstLogin: View {
                 
                 Spacer()
                 
-                Button(action: {
-                }) {
+                Button {
+                    
+                } label: {
                     Text("Вступить в Киноклуб")
                         .font(.headline)
                         .foregroundColor(.white)

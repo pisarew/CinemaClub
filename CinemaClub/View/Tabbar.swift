@@ -6,7 +6,7 @@ struct Tabbar: View {
         }
 
     var body: some View {
-        TabView() {
+        TabView {
             Text("main")
                 .tag(1)
                 .tabItem {
@@ -38,10 +38,9 @@ struct Tabbar: View {
                         .renderingMode(.template)
                 }
         }
-        .tint(.red) // сделать папку с цветами
+        .tint(.red)
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

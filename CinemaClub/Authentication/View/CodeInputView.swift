@@ -9,24 +9,19 @@ import SwiftUI
 
 struct CodeInputView: View {
     @Bindable var viewModel: AuthViewModel
-    @State private var nameInputViewActive = false
     
     var body: some View {
         NavigationStack {
             VStack {
                 TextField("Введите код", text: $viewModel.verificationCode)
                     .keyboardType(.phonePad)
-                
                 Button {
-                    viewModel.verifyCode()
-                    if viewModel.isAuth {
-                        nameInputViewActive.toggle()
-                    }
+                    viewModel.verifyCode()  
                 } label: {
                     Text("Отправить код")
                 }
             }
-            .navigationDestination(isPresented: $nameInputViewActive) {
+            .navigationDestination(isPresented: $viewModel.isAuth) {
                 NameInputView()
             }
         }
