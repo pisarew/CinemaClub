@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct FilmPostResponseDTO: Codable {
+struct FilmPostResponseDTO: Decodable {
     let data: [FilmPostDTO]
 }
 
-struct FilmPostDTO: Codable {
+struct FilmPostDTO: Decodable {
     let id: Int
     let dt: String
     let rating: Int
@@ -21,33 +21,17 @@ struct FilmPostDTO: Codable {
     let user: UserDTO
     let likes: Int
     let comments: Int
-
-    enum CodingKeysDTO: String, CodingKey {
-        case id, dt, rating, title, description
-        case toFilm = "to_film"
-        case user, likes, comments
-    }
 }
 
-struct FilmDTO: Codable {
+struct FilmDTO: Decodable {
     let title: String
     let year: String
     let posterLink: String?
-
-    enum CodingKeys: String, CodingKey {
-        case title, year
-        case posterLink = "poster_link"
-    }
 }
 
-struct UserDTO: Codable {
+struct UserDTO: Decodable {
     let name: String
     let lastName: String
-
-    enum CodingKeys: String, CodingKey {
-        case name
-        case lastName = "last_name"
-    }
 }
 
 extension FilmPostResponseDTO {
@@ -57,13 +41,13 @@ extension FilmPostResponseDTO {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX"
             dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-            let date = dateFormatter.date(from: post.dt)
+            let date = dateFormatter.date(from: post.dt) ?? Date()
             
             return Post(
                 title: post.title,
                 author: User(phone: "", name: post.user.name, lastName: post.user.lastName, nickname: ""),
                 movie: Movie(title: post.toFilm.title, image: post.toFilm.posterLink ?? ""),
-                date: date ?? Date(),
+                date: date,
                 description: post.description,
                 likes: Int.random(in: 13...10000),
                 comments: []

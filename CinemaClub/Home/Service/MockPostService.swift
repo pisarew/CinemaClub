@@ -6,13 +6,17 @@
 //
 
 import Foundation
+import OSLog
 
 final class MockPostService: PostService {
     static let shared = MockPostService()
     
     private let decoder = JSONDecoder()
+    private let logger = Logger()
     
-    private init() {}
+    private init() {
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+    }
     
     func fetchData() async throws -> [Post]? {
         guard let url = Bundle.main.url(forResource: "posts", withExtension: "json") else { return nil }
@@ -21,7 +25,7 @@ final class MockPostService: PostService {
             let dto = try decoder.decode(FilmPostResponseDTO.self, from: jsonData)
             return dto.toPosts
         } catch {
-            print("Ошибка при чтении или декодировании данных: \(error.localizedDescription)")
+            logger.error("Ошибка при чтении или декодировании данных: \(error.localizedDescription)")
             throw error
         }
     }
