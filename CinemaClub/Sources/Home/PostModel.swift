@@ -21,6 +21,7 @@ struct Post: Identifiable {
 
 struct Movie {
     let title: String
+    let year: String
     let image: String
 }
 
