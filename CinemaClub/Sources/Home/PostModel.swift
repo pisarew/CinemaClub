@@ -11,6 +11,7 @@ import SwiftUI
 struct Post: Identifiable {
     let id = UUID()
     let title: String
+    let rating: Int
     let author: User
     let movie: Movie
     let date: Date
