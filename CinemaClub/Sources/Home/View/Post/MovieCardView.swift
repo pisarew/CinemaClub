@@ -36,8 +36,7 @@ struct MovieCardView: View {
             }
             
         }
-        .frame(width: 360, height: 540)
-        .padding()
+        .frame(height: 540)
     }
     
     var formattedDate: String {
