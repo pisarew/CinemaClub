@@ -16,7 +16,6 @@ struct MovieCardView: View {
         ZStack {
             Image(movie.image)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
                 .clipShape(RoundedRectangle(cornerRadius: 12))
             VStack {
                 AuthorInfoBar(author: author, date: formattedDate)
