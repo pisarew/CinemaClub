@@ -2,39 +2,39 @@ import SwiftUI
 
 struct Tabbar: View {
     init() {
-            UITabBar.appearance().unselectedItemTintColor = .systemGray3
-        }
+        UITabBar.appearance().unselectedItemTintColor = .systemGray3
+    }
 
     var body: some View {
         TabView {
             HomeView()
                 .tag(1)
                 .tabItem {
-                    Image("home")
+                    Image(systemName: "house.fill")
                         .renderingMode(.template)
                 }
             Text("search")
                 .tag(2)
                 .tabItem {
-                    Image("discover")
+                    Image(systemName: "magnifyingglass")
                         .renderingMode(.template)
                 }
             Text("the creation of the post")
                 .tag(3)
                 .tabItem {
-                    Image("Add")
+                    Image(systemName: "plus.circle.fill")
                         .renderingMode(.template)
                 }
             Text("Watch list")
                 .tag(4)
                 .tabItem {
-                    Image("heart")
+                    Image(systemName: "heart.fill")
                         .renderingMode(.template)
                 }
             Text("profile")
                 .tag(5)
                 .tabItem {
-                    Image("profile")
+                    Image(systemName: "person.fill")
                         .renderingMode(.template)
                 }
         }
