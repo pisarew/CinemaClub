@@ -7,7 +7,7 @@ struct Tabbar: View {
 
     var body: some View {
         TabView {
-            Text("main")
+            HomeView()
                 .tag(1)
                 .tabItem {
                     Image("home")
