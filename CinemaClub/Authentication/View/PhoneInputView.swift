@@ -135,7 +135,7 @@ struct PhoneInputView: View {
                 .padding(.bottom, 20)
             }
             .navigationDestination(isPresented: $viewModel.isVerificationId) {
-                CodeInputView(viewModel: viewModel)
+                CodeInputView(viewModel: viewModel, phoneNumber: selectedCountryCode + phoneNumber)
             }
         }
     }

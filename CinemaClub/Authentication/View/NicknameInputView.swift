@@ -19,15 +19,20 @@ struct NicknameInputView: View {
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(12.0)
                 .padding(.bottom, 0)
+            
             Text("Ссылка на вас в КиноКлубе:")
                 .foregroundColor(.gray)
                 .padding(.bottom, -15)
             
-            Text("kinoclub.com/@\(nickname)")
-                .foregroundColor(.red)
+            if nickname.isEmpty {
+                Text("kinoclub.com/@username")
+                    .foregroundColor(.gray)
+            } else {
+                Text("kinoclub.com/\(nickname)")
+                    .foregroundColor(.red)
+            }
             
             Button(action: {
-                
             }, label: {
                 Text("Продолжить")
                     .foregroundColor(.white)
