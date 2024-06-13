@@ -12,9 +12,49 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(viewModel.posts ?? []) { post in
-                    PostView(post: post)
+            if viewModel.posts == nil {
+                ProgressView()
+                    .onAppear {
+                        Task {
+                            await viewModel.update()
+                        }
+                    }
+            } else {
+                ScrollView {
+                    LazyVStack {
+                        ForEach(viewModel.posts ?? []) { post in
+                            PostView(post: post)
+                        }
+                    }
+                }
+                .navigationTitle("Новое и актуальное")
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button {
+                            
+                        } label: {
+                             Image("loupe")
+                                .renderingMode(.template)
+                                .foregroundStyle(Color(uiColor: UIColor.systemGray4))
+                        }
+                    }
+                }
+                .toolbar {
+                    Button {
+                        
+                    } label: {
+                         Image("bell")
+                            .renderingMode(.template)
+                            .foregroundStyle(Color(uiColor: UIColor.systemGray4))
+                    }
+                    Button {
+                        
+                    } label: {
+                         Image("paperplane")
+                            .renderingMode(.template)
+                            .foregroundStyle(Color(uiColor: UIColor.systemGray4))
+                    }
+
                 }
             }
         }
