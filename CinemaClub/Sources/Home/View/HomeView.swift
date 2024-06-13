@@ -14,7 +14,7 @@ struct HomeView: View {
         NavigationStack {
             List {
                 ForEach(viewModel.posts ?? []) { post in
-                    Text(post.title)
+                    PostView(post: post)
                 }
             }
         }

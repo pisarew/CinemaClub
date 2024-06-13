@@ -44,9 +44,10 @@ extension FilmPostResponseDTO {
             let date = dateFormatter.date(from: post.dt) ?? Date()
             
             return Post(
-                title: post.title,
+                title: post.title, 
+                rating: post.rating,
                 author: User(phone: "", name: post.user.name, lastName: post.user.lastName, nickname: ""),
-                movie: Movie(title: post.toFilm.title, image: post.toFilm.posterLink ?? ""),
+                movie: Movie(title: post.toFilm.title, year: post.toFilm.year,  image: post.toFilm.posterLink ?? ""),
                 date: date,
                 description: post.description,
                 likes: Int.random(in: 13...10000),
