@@ -50,7 +50,7 @@ struct MovieSearchView: View {
                                     .foregroundStyle(.black)
                             }
                         }
-                        .padding(.leading, 8)
+                        .padding(.leading)
                     }
                 }
             }
@@ -77,7 +77,7 @@ struct MovieSearchView: View {
                                 Spacer()
                             }
                         }
-                        .padding(.leading, 8)
+                        .padding(.leading)
                     }
                 }
             }
@@ -105,7 +105,7 @@ struct MovieSearchView: View {
                                 .font(.system(size: 13))
                                 .fontWeight(.semibold)
                         }
-                        .padding(.leading, 8)
+                        .padding(.leading)
                     }
                 }
             }
@@ -128,7 +128,7 @@ struct FilmSelectionView: View {
                             .resizable()
                             .frame(width: 143, height: 215)
                             .clipShape(RoundedRectangle(cornerRadius: 12))
-                            .padding(.leading, 8)
+                            .padding(.leading)
                     }
                 }
             }
@@ -145,7 +145,7 @@ struct SectionTitle: View {
                 .fontWeight(.semibold)
             Spacer()
         }
-        .padding(.leading, 8)
+        .padding(.leading)
     }
 }
 
