@@ -6,19 +6,19 @@ struct Tabbar: View {
     }
 
     var body: some View {
-        TabView {
-            HomeView()
-                .tag(1)
-                .tabItem {
-                    Image(systemName: "house.fill")
-                        .renderingMode(.template)
-                }
-            Text("search")
-                .tag(2)
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
-                        .renderingMode(.template)
-                }
+           TabView {
+               HomeView()
+                   .tag(1)
+                   .tabItem {
+                       Image("home")
+                           .renderingMode(.template)
+                   }
+               Text("search")
+                   .tag(2)
+                   .tabItem {
+                       Image("discover")
+                           .renderingMode(.template)
+                   }
             Text("the creation of the post")
                 .tag(3)
                 .tabItem {
@@ -28,7 +28,7 @@ struct Tabbar: View {
             Text("Watch list")
                 .tag(4)
                 .tabItem {
-                    Image(systemName: "heart.fill")
+                    Image("heart")
                         .renderingMode(.template)
                 }
             Text("profile")

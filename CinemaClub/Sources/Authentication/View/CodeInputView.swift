@@ -10,7 +10,6 @@ import SwiftUI
 struct CodeInputView: View {
     @Bindable var viewModel: AuthViewModel
     var phoneNumber: String
-    @State private var nameInputViewActive = false
     @State private var code: [String] = Array(repeating: "", count: 6)
     @FocusState private var focusedField: Int?
     
@@ -41,16 +40,11 @@ struct CodeInputView: View {
                 .padding(.bottom, 20)
             }
         }
-        .navigationDestination(isPresented: $nameInputViewActive) {
+        .navigationDestination(isPresented: $viewModel.isAuth) {
             NameInputView()
         }
         .onAppear {
             focusedField = 0
-        }
-        .onChange(of: viewModel.isAuth) {
-            if viewModel.isAuth {
-                nameInputViewActive = true
-            }
         }
         .onChange(of: code) {
             if code.joined().count == 6 {
