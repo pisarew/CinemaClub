@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct Tabbar: View {
+struct TabBar: View {
     init() {
             UITabBar.appearance().unselectedItemTintColor = .systemGray3
         }
@@ -13,7 +13,7 @@ struct Tabbar: View {
                     Image("home")
                         .renderingMode(.template)
                 }
-            Text("search")
+            SearchView()
                 .tag(2)
                 .tabItem {
                     Image("discover")
@@ -44,6 +44,6 @@ struct Tabbar: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        Tabbar()
+        TabBar()
     }
 }

@@ -9,6 +9,7 @@ import Foundation
 import OSLog
 
 final class MockSearchService: SearchServiceProtocol {
+    
     static let shared = MockSearchService()
     
     private let decoder = JSONDecoder()
@@ -44,6 +45,22 @@ final class MockSearchService: SearchServiceProtocol {
             let jsonData = try Data(contentsOf: url)
             let dto = try decoder.decode(FilmSelectionDTO.self, from: jsonData)
             return dto.toMovies
+        } catch {
+            logger.error("Ошибка деодирования данных: \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
+    func fetchPersons() -> [Person]? {
+        guard let url = Bundle.main.url(forResource: "persons", withExtension: "json") else {
+            logger.error("File not found")
+            return nil
+        }
+        
+        do {
+            let jsonData = try Data(contentsOf: url)
+            let dto = try decoder.decode(PersonsDTO.self, from: jsonData)
+            return dto.toPerson
         } catch {
             logger.error("Ошибка деодирования данных: \(error.localizedDescription)")
             return nil
