@@ -9,9 +9,14 @@ import SwiftUI
 
 struct CodeInputView: View {
     @Bindable var viewModel: AuthViewModel
-    @State private var nameInputViewActive = false
+    var phoneNumber: String
     @State private var code: [String] = Array(repeating: "", count: 6)
     @FocusState private var focusedField: Int?
+    
+    init(viewModel: AuthViewModel, phoneNumber: String) {
+        self.viewModel = viewModel
+        self.phoneNumber = phoneNumber
+    }
     
     var body: some View {
         NavigationStack {
@@ -23,7 +28,7 @@ struct CodeInputView: View {
                 Text("Код был отправлен на номер:")
                     .foregroundColor(.secondary)
                 
-                Text("+7 965 212 64 14")
+                Text(phoneNumber)
                     .foregroundColor(.black)
                     .padding(.bottom, 20)
                 
@@ -33,24 +38,19 @@ struct CodeInputView: View {
                     }
                 }
                 .padding(.bottom, 20)
-                
-                Button {
-                    viewModel.verificationCode = code.joined()
-                    viewModel.verifyCode()
-                    if viewModel.isAuth {
-                        nameInputViewActive.toggle()
-                    }
-                } label: {
-                    Text("Отправить код")
-                        .foregroundColor(.red)
-                }
             }
         }
-        .navigationDestination(isPresented: $nameInputViewActive) {
+        .navigationDestination(isPresented: $viewModel.isAuth) {
             NameInputView()
         }
         .onAppear {
             focusedField = 0
+        }
+        .onChange(of: code) {
+            if code.joined().count == 6 {
+                viewModel.verificationCode = code.joined()
+                viewModel.verifyCode()
+            }
         }
     }
 }
@@ -81,8 +81,8 @@ struct CodeSquare: View {
         .multilineTextAlignment(.center)
         .keyboardType(.numberPad)
         .focused($focusedField, equals: index)
-        .onChange(of: focusedField) { oldValue, newValue in
-            if newValue == index {
+        .onChange(of: focusedField) {
+            if focusedField == index {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                     focusedField = index
                 }
@@ -92,5 +92,5 @@ struct CodeSquare: View {
 }
 
 #Preview {
-    CodeInputView(viewModel: AuthViewModel())
+    CodeInputView(viewModel: AuthViewModel(), phoneNumber: "+7 965 212 64 14")
 }

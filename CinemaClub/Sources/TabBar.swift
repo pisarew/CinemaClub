@@ -2,8 +2,8 @@ import SwiftUI
 
 struct TabBar: View {
     init() {
-            UITabBar.appearance().unselectedItemTintColor = .systemGray3
-        }
+        UITabBar.appearance().unselectedItemTintColor = .systemGray3
+    }
 
     var body: some View {
         TabView {
@@ -22,7 +22,7 @@ struct TabBar: View {
             Text("the creation of the post")
                 .tag(3)
                 .tabItem {
-                    Image("Add")
+                    Image(systemName: "plus.circle.fill")
                         .renderingMode(.template)
                 }
             Text("Watch list")
@@ -34,7 +34,7 @@ struct TabBar: View {
             Text("profile")
                 .tag(5)
                 .tabItem {
-                    Image("profile")
+                    Image(systemName: "person.fill")
                         .renderingMode(.template)
                 }
         }
