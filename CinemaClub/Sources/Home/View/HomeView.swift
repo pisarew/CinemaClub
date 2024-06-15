@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @Bindable private var viewModel = PostViewModel(service: MockPostService.shared)
+    @StateObject private var viewModel = PostViewModel(service: MockPostService.shared)
     
     var body: some View {
         NavigationStack {
@@ -31,30 +31,30 @@ struct HomeView: View {
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
                         Button {
-                            
                         } label: {
-                             Image("loupe")
+                            Image("loupe")
                                 .renderingMode(.template)
                                 .foregroundStyle(Color(uiColor: UIColor.systemGray4))
                         }
                     }
-                }
-                .toolbar {
-                    Button {
-                        
-                    } label: {
-                         Image("bell")
-                            .renderingMode(.template)
-                            .foregroundStyle(Color(uiColor: UIColor.systemGray4))
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        HStack {
+                            Button {
+                                // Действие для второй кнопки
+                            } label: {
+                                Image("bell")
+                                    .renderingMode(.template)
+                                    .foregroundStyle(Color(uiColor: UIColor.systemGray4))
+                            }
+                            Button {
+                                // Действие для третьей кнопки
+                            } label: {
+                                Image("paperplane")
+                                    .renderingMode(.template)
+                                    .foregroundStyle(Color(uiColor: UIColor.systemGray4))
+                            }
+                        }
                     }
-                    Button {
-                        
-                    } label: {
-                         Image("paperplane")
-                            .renderingMode(.template)
-                            .foregroundStyle(Color(uiColor: UIColor.systemGray4))
-                    }
-
                 }
             }
         }
