@@ -14,7 +14,7 @@ struct CinemaClubApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Tabbar()
+            TabBar()
         }
     }
 }

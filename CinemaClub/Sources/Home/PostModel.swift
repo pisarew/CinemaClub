@@ -20,7 +20,8 @@ struct Post: Identifiable {
     let comments: [Comment]
 }
 
-struct Movie {
+struct Movie: Identifiable {
+    let id = UUID()
     let title: String
     let year: String
     let image: String

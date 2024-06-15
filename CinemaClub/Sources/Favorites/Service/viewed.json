@@ -1,0 +1,30 @@
+{
+  "data": [
+    {
+      "title": "Inception",
+      "year": "2010",
+      "posterLink": "inception"
+    },
+    {
+      "title": "The Dark Knight",
+      "year": "2008",
+      "posterLink": "dark-knight"
+    },
+    {
+      "title": "Interstellar",
+      "year": "2014",
+      "posterLink": "interstellar"
+    },
+    {
+      "title": "Fight Club",
+      "year": "1999",
+      "posterLink": "fight-club"
+    },
+    {
+      "title": "The Matrix",
+      "year": "1999",
+      "posterLink": "matrix"
+    }
+  ]
+}
+
