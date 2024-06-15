@@ -1,3 +1,10 @@
+//
+//  TabBar.swift
+//  CinemaClub
+//
+//  Created by Мария Степанчук on 06.06.2024.
+//
+
 import SwiftUI
 
 struct TabBar: View {
