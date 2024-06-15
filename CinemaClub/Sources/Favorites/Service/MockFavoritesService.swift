@@ -10,11 +10,11 @@ import Foundation
 final class MockFavoritesService: FavoritesServiceProtocol {
     
     func fetchFavorites() -> [Movie]? {
-        <#code#>
+        return nil
     }
     
     func fetchViewed() -> [Movie]? {
-        <#code#>
+        return nil
     }
     
 }

@@ -1,30 +1,49 @@
 {
   "data": [
     {
-      "title": "Inception",
-      "year": "2010",
-      "posterLink": "inception"
+      "title": "Pulp Fiction",
+      "year": "1994",
+      "country": "USA",
+      "rating": 9,
+      "poster_link": "pulp-fiction",
+      "trailer_link": "",
+      "description": "A dark comedy crime film with intertwining stories of Los Angeles mobsters."
     },
     {
-      "title": "The Dark Knight",
-      "year": "2008",
-      "posterLink": "dark-knight"
+      "title": "Forrest Gump",
+      "year": "1994",
+      "country": "USA",
+      "rating": 8,
+      "poster_link": "forrest-gump",
+      "trailer_link": "",
+      "description": "The story of Forrest Gump, a man with a low IQ, and his extraordinary life."
     },
     {
-      "title": "Interstellar",
-      "year": "2014",
-      "posterLink": "interstellar"
+      "title": "The Shawshank Redemption",
+      "year": "1994",
+      "country": "USA",
+      "rating": 9,
+      "poster_link": "shawshank",
+      "trailer_link": "",
+      "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."
     },
     {
-      "title": "Fight Club",
-      "year": "1999",
-      "posterLink": "fight-club"
+      "title": "The Godfather",
+      "year": "1972",
+      "country": "USA",
+      "rating": 10,
+      "poster_link": "godfather",
+      "trailer_link": "",
+      "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son."
     },
     {
-      "title": "The Matrix",
-      "year": "1999",
-      "posterLink": "matrix"
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "year": "2001",
+      "country": "USA",
+      "rating": 9,
+      "poster_link": "lord-of-the-rings",
+      "trailer_link": "",
+      "description": "A meek Hobbit and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth."
     }
   ]
 }
-

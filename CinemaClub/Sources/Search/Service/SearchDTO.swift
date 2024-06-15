@@ -27,7 +27,11 @@ extension FilmSelectionDTO {
             Movie(
                 title: film.title,
                 year: film.year,
-                image: film.posterLink
+                country: film.country,
+                rating: film.rating,
+                image: film.posterLink,
+                kinopoiskLink: film.trailerLink,
+                description: film.description
             )
         }
     }
