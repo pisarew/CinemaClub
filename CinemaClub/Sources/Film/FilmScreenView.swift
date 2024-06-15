@@ -8,7 +8,15 @@
 import SwiftUI
 
 struct FilmScreenView: View {
+    @Environment(\.openURL) private var openURL
+    
     let film: Movie
+    
+    private let genres = [
+        "Триллер",
+        "Драмма",
+        "Криминал"
+    ]
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -28,6 +36,53 @@ struct FilmScreenView: View {
                         .padding()
                 }
             }
+            
+            HStack {
+                RectangleLabelView(title: "\(film.rating)", subtitle: "Рейтинг")
+                RectangleLabelView(title: "100519", subtitle: "Посмотрят")
+                RectangleLabelView(title: "52000", subtitle: "Смотрели")
+                RectangleLabelView(title: "270", subtitle: "Рецензии")
+            }
+            
+            Button {
+                if let url = URL(string: film.kinopoiskLink) {
+                    openURL(url)
+                }
+            } label: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color(uiColor: UIColor.systemGray6))
+                    HStack {
+                        Image(systemName: "play.rectangle.fill")
+                        Text("Смотреть на КиноПоиске")
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                    }
+                    .foregroundStyle(.black)
+                    .padding()
+                }
+            }
+            
+            PostTextView(title: "Описание фильма", text: film.description)
+            
+            HStack {
+                Text("Жанры")
+                    .fontWeight(.semibold)
+                Spacer()
+            }
+            
+            HStack {
+                ForEach(genres, id: \.self) { genre in
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color(uiColor: UIColor.systemGray6))
+                            .frame(width: 102, height: 34)
+                        Text("#" + genre)
+                    }
+                }
+                Spacer()
+            }
+            
         }
         .padding()
     }
@@ -71,6 +126,27 @@ private struct FilmNameView: View {
                 }
             }
             .padding(10)
+        }
+    }
+}
+
+private struct RectangleLabelView: View {
+    let title: String
+    let subtitle: String
+    
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color(uiColor: UIColor.systemGray6))
+                .frame(width: 84, height: 84)
+            VStack {
+                Text(title)
+                    .font(.system(size: 15))
+                    .fontWeight(.semibold)
+                Text(subtitle)
+                    .font(.system(size: 13))
+                    .foregroundStyle(.gray)
+            }
         }
     }
 }

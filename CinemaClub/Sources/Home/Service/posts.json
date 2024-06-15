@@ -12,7 +12,7 @@
                 "country": "USA",
                 "rating": 9,
                 "poster_link": "pulp-fiction",
-                "trailer_link": "",
+                "trailer_link": "https://www.kinopoisk.ru/film/342/",
                 "description": "Сюжет о двух киллерах, боксёре, жене гангстера и паре бандитов."
             },
             "user": {
@@ -34,7 +34,7 @@
                 "country": "USA",
                 "rating": 9,
                 "poster_link": "fight-club",
-                "trailer_link": "",
+                "trailer_link": "https://www.kinopoisk.ru/film/361/",
                 "description": "История офисного работника, страдающего бессонницей, который создает подпольный бойцовский клуб."
             },
             "user": {
@@ -56,7 +56,7 @@
                 "country": "New Zealand",
                 "rating": 8,
                 "poster_link": "lord-of-the-rings",
-                "trailer_link": "",
+                "trailer_link": "https://www.kinopoisk.ru/film/328/",
                 "description": "Фэнтезийная эпопея о путешествии хоббита и его друзей для уничтожения могущественного кольца."
             },
             "user": {
@@ -78,7 +78,7 @@
                 "country": "USA",
                 "rating": 8,
                 "poster_link": "matrix",
-                "trailer_link": "",
+                "trailer_link": "https://www.kinopoisk.ru/film/301/",
                 "description": "История хакера, который обнаруживает, что мир вокруг него — это иллюзия, созданная машинами."
             },
             "user": {
@@ -100,7 +100,7 @@
                 "country": "USA",
                 "rating": 8,
                 "poster_link": "shutter-island",
-                "trailer_link": "",
+                "trailer_link": "https://www.kinopoisk.ru/film/397667/",
                 "description": "Детектив расследует исчезновение пациентки в психиатрической больнице на острове."
             },
             "user": {
@@ -122,7 +122,7 @@
                 "country": "USA",
                 "rating": 9,
                 "poster_link": "interstellar",
-                "trailer_link": "",
+                "trailer_link": "https://www.kinopoisk.ru/film/258687/",
                 "description": "Группа исследователей использует червоточину для путешествия на новые планеты в поисках нового дома для человечества."
             },
             "user": {
@@ -144,7 +144,7 @@
                 "country": "USA",
                 "rating": 9,
                 "poster_link": "blade-runner",
-                "trailer_link": "",
+                "trailer_link": "https://www.kinopoisk.ru/film/589290/",
                 "description": "Детектив в будущем расследует дела репликантов — искусственных людей."
             },
             "user": {
@@ -166,7 +166,7 @@
                 "country": "France",
                 "rating": 7,
                 "poster_link": "amelie",
-                "trailer_link": "",
+                "trailer_link": "https://www.kinopoisk.ru/film/341/",
                 "description": "История молодой женщины, которая решает изменить жизнь окружающих людей к лучшему."
             },
             "user": {
@@ -188,7 +188,7 @@
                 "country": "USA",
                 "rating": 7,
                 "poster_link": "cast-away",
-                "trailer_link": "",
+                "trailer_link": "https://www.kinopoisk.ru/film/627/",
                 "description": "История выживания человека на необитаемом острове после авиакатастрофы."
             },
             "user": {

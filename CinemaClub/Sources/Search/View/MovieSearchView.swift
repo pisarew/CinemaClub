@@ -116,20 +116,33 @@ struct MovieSearchView: View {
 
 struct FilmSelectionView: View {
     @Binding var content: [Movie]?
+    @State private var showFilmDatailView = false
+    @State private var selectedFilm: Movie?
     
     var body: some View {
         if content == nil {
             ProgressView()
         } else {
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack {
-                    ForEach(content ?? []) { film in
-                        Image(film.image)
-                            .resizable()
-                            .frame(width: 143, height: 215)
-                            .clipShape(RoundedRectangle(cornerRadius: 12))
-                            .padding(.leading)
+            NavigationStack {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack {
+                        ForEach(content ?? []) { film in
+                            Image(film.image)
+                                .resizable()
+                                .frame(width: 143, height: 215)
+                                .clipShape(RoundedRectangle(cornerRadius: 12))
+                                .padding(.leading)
+                                .onTapGesture {
+                                    showFilmDatailView = true
+                                    selectedFilm = film
+                                }
+                        }
                     }
+                }
+            }
+            .sheet(isPresented: $showFilmDatailView) {
+                if let film = selectedFilm {
+                    FilmScreenView(film: film)
                 }
             }
         }

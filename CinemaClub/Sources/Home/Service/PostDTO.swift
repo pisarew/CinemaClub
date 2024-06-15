@@ -59,7 +59,7 @@ extension FilmPostResponseDTO {
                     rating: post.toFilm.rating,
                     image: post.toFilm.posterLink,
                     kinopoiskLink: post.toFilm.trailerLink,
-                    description: ""
+                    description: post.description
                 ),
                 date: date,
                 description: post.description,

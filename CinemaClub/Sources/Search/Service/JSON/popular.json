@@ -6,7 +6,7 @@
       "country": "USA",
       "rating": 9,
       "poster_link": "inception",
-      "trailer_link": "",
+      "trailer_link": "https://www.kinopoisk.ru/film/447301/",
       "description": "A mind-bending thriller about dream invasion and manipulation."
     },
     {
@@ -15,7 +15,7 @@
       "country": "USA",
       "rating": 9,
       "poster_link": "dark-knight",
-      "trailer_link": "",
+      "trailer_link": "https://www.kinopoisk.ru/film/111543/",
       "description": "A gripping tale of Batman's battle against the Joker."
     },
     {
@@ -24,7 +24,7 @@
       "country": "USA",
       "rating": 8,
       "poster_link": "interstellar",
-      "trailer_link": "",
+      "trailer_link": "https://www.kinopoisk.ru/film/258687/",
       "description": "A visually stunning journey through space and time."
     },
     {
@@ -33,7 +33,7 @@
       "country": "USA",
       "rating": 9,
       "poster_link": "fight-club",
-      "trailer_link": "",
+      "trailer_link": "https://www.kinopoisk.ru/film/361/",
       "description": "A dark and twisted story of identity and rebellion."
     },
     {
@@ -42,7 +42,7 @@
       "country": "USA",
       "rating": 9,
       "poster_link": "matrix",
-      "trailer_link": "",
+      "trailer_link": "https://www.kinopoisk.ru/film/301/",
       "description": "A revolutionary sci-fi film about the nature of reality."
     }
   ]

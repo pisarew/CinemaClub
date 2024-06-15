@@ -6,7 +6,7 @@
       "country": "USA",
       "rating": 9,
       "poster_link": "pulp-fiction",
-      "trailer_link": "",
+      "trailer_link": "https://www.kinopoisk.ru/film/342/?utm_referrer=www.google.com",
       "description": "A dark comedy crime film with intertwining stories of Los Angeles mobsters."
     },
     {
@@ -15,7 +15,7 @@
       "country": "USA",
       "rating": 8,
       "poster_link": "forrest-gump",
-      "trailer_link": "",
+      "trailer_link": "https://www.kinopoisk.ru/film/448/",
       "description": "The story of Forrest Gump, a man with a low IQ, and his extraordinary life."
     },
     {
@@ -24,7 +24,7 @@
       "country": "USA",
       "rating": 9,
       "poster_link": "shawshank",
-      "trailer_link": "",
+      "trailer_link": "https://www.kinopoisk.ru/film/326/",
       "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."
     },
     {
@@ -33,7 +33,7 @@
       "country": "USA",
       "rating": 10,
       "poster_link": "godfather",
-      "trailer_link": "",
+      "trailer_link": "https://www.kinopoisk.ru/film/325/",
       "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son."
     },
     {
@@ -42,7 +42,7 @@
       "country": "USA",
       "rating": 9,
       "poster_link": "lord-of-the-rings",
-      "trailer_link": "",
+      "trailer_link": "https://www.kinopoisk.ru/film/328/",
       "description": "A meek Hobbit and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth."
     }
   ]
