@@ -8,34 +8,44 @@
 import SwiftUI
 
 struct MovieCardView: View {
+    @State private var showFilmDetailView = false
+    
     let movie: Movie
     let author: User
     let date: Date
     
     var body: some View {
-        ZStack {
-            Image(movie.image)
-                .resizable()
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-            VStack {
-                AuthorInfoBar(author: author, date: formattedDate)
-                    .padding(8)
-                Spacer()
-                HStack {
-                    Text(movie.title)
-                        .foregroundStyle(.white)
-                        .fontWeight(.semibold)
-                    Text("\(movie.year) г.")
-                        .foregroundStyle(Color(uiColor: UIColor.systemGray3))
-                        .fontWeight(.semibold)
-                        .opacity(0.6)
+        NavigationStack {
+            ZStack {
+                Image(movie.image)
+                    .resizable()
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                VStack {
+                    AuthorInfoBar(author: author, date: formattedDate)
+                        .padding(8)
                     Spacer()
+                    HStack {
+                        Text(movie.title)
+                            .foregroundStyle(.white)
+                            .fontWeight(.semibold)
+                        Text("\(movie.year) г.")
+                            .foregroundStyle(Color(uiColor: UIColor.systemGray3))
+                            .fontWeight(.semibold)
+                            .opacity(0.6)
+                        Spacer()
+                    }
+                    .padding(10)
                 }
-                .padding(10)
+                
             }
-            
+            .onTapGesture {
+                showFilmDetailView = true
+            }
+            .frame(height: 540)
         }
-        .frame(height: 540)
+        .sheet(isPresented: $showFilmDetailView) {
+            FilmScreenView(film: movie)
+        }
     }
     
     var formattedDate: String {
