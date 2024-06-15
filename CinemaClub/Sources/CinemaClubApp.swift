@@ -31,9 +31,7 @@ struct CinemaClubApp: App {
     private func loadData() {
         Task {
             await postViewModel.update()
-            // Добавьте здесь любую другую необходимую инициализацию
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                // Задержка для демонстрации экрана загрузки
                 isLoading = false
             }
         }
