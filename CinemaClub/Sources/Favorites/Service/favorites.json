@@ -1,31 +1,50 @@
 {
   "data": [
     {
-      "title": "Pulp Fiction",
-      "year": "1994",
-      "posterLink": "pulp-fiction"
+      "title": "Inception",
+      "year": "2010",
+      "country": "USA",
+      "rating": 9,
+      "poster_link": "inception",
+      "trailer_link": "",
+      "description": "A mind-bending thriller about dream invasion and manipulation."
     },
     {
-      "title": "Forrest Gump",
-      "year": "1994",
-      "posterLink": "forrest-gump"
+      "title": "The Dark Knight",
+      "year": "2008",
+      "country": "USA",
+      "rating": 9,
+      "poster_link": "dark-knight",
+      "trailer_link": "",
+      "description": "A gripping tale of Batman's battle against the Joker."
     },
     {
-      "title": "The Shawshank Redemption",
-      "year": "1994",
-      "posterLink": "shawshank"
+      "title": "Interstellar",
+      "year": "2014",
+      "country": "USA",
+      "rating": 8,
+      "poster_link": "interstellar",
+      "trailer_link": "",
+      "description": "A visually stunning journey through space and time."
     },
     {
-      "title": "The Godfather",
-      "year": "1972",
-      "posterLink": "godfather"
+      "title": "Fight Club",
+      "year": "1999",
+      "country": "USA",
+      "rating": 9,
+      "poster_link": "fight-club",
+      "trailer_link": "",
+      "description": "A dark and twisted story of identity and rebellion."
     },
     {
-      "title": "The Lord of the Rings: The Fellowship of the Ring",
-      "year": "2001",
-      "posterLink": "lord-of-the-rings"
+      "title": "The Matrix",
+      "year": "1999",
+      "country": "USA",
+      "rating": 9,
+      "poster_link": "matrix",
+      "trailer_link": "",
+      "description": "A revolutionary sci-fi film about the nature of reality."
     }
   ]
 }
-
 
