@@ -6,18 +6,28 @@
 //
 
 import Foundation
+import Combine
 
-protocol FavoritesServiceProtocol {
-    func fetchFavorites() -> [Movie]?
-    func fetchViewed() -> [Movie]?
-}
-
-@Observable
-final class FavoritesViewModel {
+final class FavoritesViewModel: ObservableObject {
+    private let service: FavoriteslistServiceProtocol
+    @Published var favorites: [Movie] = []
+    @Published var viewed: [Movie] = []
     
-    private let service: FavoritesServiceProtocol
-    
-    init(service: FavoritesServiceProtocol) {
+    init(service: FavoriteslistServiceProtocol = FavoriteslistService.shared) {
         self.service = service
+    }
+    
+    func update() async {
+        do {
+            let favorites = try await service.fetchFavorites()
+            let viewed = try await service.fetchViewed()
+            
+            DispatchQueue.main.async {
+                self.favorites = favorites
+                self.viewed = viewed
+            }
+        } catch {
+            print("Ошибка при обновлении данных: \(error)")
+        }
     }
 }

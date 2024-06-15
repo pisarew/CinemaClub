@@ -25,7 +25,7 @@ struct TabBar: View {
                     Image(systemName: "plus.circle.fill")
                         .renderingMode(.template)
                 }
-            Text("Watch list")
+            FavoritesView()
                 .tag(4)
                 .tabItem {
                     Image("heart")
