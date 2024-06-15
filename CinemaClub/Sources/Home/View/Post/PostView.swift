@@ -24,7 +24,8 @@ struct PostView: View {
 #Preview {
     PostView(
         post: Post(
-            title: "Бойцовский клуб: Смысл финала", 
+            title: "Бойцовский клуб: Смысл финала",
+            
             rating: 9,
             author: User(
                 phone: "666",
@@ -32,7 +33,15 @@ struct PostView: View {
                 lastName: "Дерден",
                 nickname: "projectdestruction"
             ),
-            movie: Movie(title: "Бойцовский клуб", year: "1999", image: "fight-club"),
+            movie: Movie(
+                title: "Бойцовский клуб",
+                year: "1999",
+                country: "USA",
+                rating: 9,
+                image: "fight-club",
+                kinopoiskLink: "",
+                description: ""
+            ),
             date: Date(),
             description:
                             """

@@ -9,7 +9,11 @@
             "to_film": {
                 "title": "Криминальное чтиво",
                 "year": "1994",
-                "poster_link": "pulp-fiction"
+                "country": "USA",
+                "rating": 9,
+                "poster_link": "pulp-fiction",
+                "trailer_link": "",
+                "description": "Сюжет о двух киллерах, боксёре, жене гангстера и паре бандитов."
             },
             "user": {
                 "name": "Никита",
@@ -27,7 +31,11 @@
             "to_film": {
                 "title": "Бойцовский клуб",
                 "year": "1999",
-                "poster_link": "fight-club"
+                "country": "USA",
+                "rating": 9,
+                "poster_link": "fight-club",
+                "trailer_link": "",
+                "description": "История офисного работника, страдающего бессонницей, который создает подпольный бойцовский клуб."
             },
             "user": {
                 "name": "Алексей",
@@ -45,7 +53,11 @@
             "to_film": {
                 "title": "Властелин колец",
                 "year": "2001",
-                "poster_link": "lord-of-the-rings"
+                "country": "New Zealand",
+                "rating": 8,
+                "poster_link": "lord-of-the-rings",
+                "trailer_link": "",
+                "description": "Фэнтезийная эпопея о путешествии хоббита и его друзей для уничтожения могущественного кольца."
             },
             "user": {
                 "name": "Иван",
@@ -63,7 +75,11 @@
             "to_film": {
                 "title": "Матрица",
                 "year": "1999",
-                "poster_link": "matrix"
+                "country": "USA",
+                "rating": 8,
+                "poster_link": "matrix",
+                "trailer_link": "",
+                "description": "История хакера, который обнаруживает, что мир вокруг него — это иллюзия, созданная машинами."
             },
             "user": {
                 "name": "Мария",
@@ -81,7 +97,11 @@
             "to_film": {
                 "title": "Остров проклятых",
                 "year": "2010",
-                "poster_link": "shutter-island"
+                "country": "USA",
+                "rating": 8,
+                "poster_link": "shutter-island",
+                "trailer_link": "",
+                "description": "Детектив расследует исчезновение пациентки в психиатрической больнице на острове."
             },
             "user": {
                 "name": "Елена",
@@ -99,7 +119,11 @@
             "to_film": {
                 "title": "Интерстеллар",
                 "year": "2014",
-                "poster_link": "interstellar"
+                "country": "USA",
+                "rating": 9,
+                "poster_link": "interstellar",
+                "trailer_link": "",
+                "description": "Группа исследователей использует червоточину для путешествия на новые планеты в поисках нового дома для человечества."
             },
             "user": {
                 "name": "Дмитрий",
@@ -117,7 +141,11 @@
             "to_film": {
                 "title": "Бегущий по лезвию",
                 "year": "1982",
-                "poster_link": "blade-runner"
+                "country": "USA",
+                "rating": 9,
+                "poster_link": "blade-runner",
+                "trailer_link": "",
+                "description": "Детектив в будущем расследует дела репликантов — искусственных людей."
             },
             "user": {
                 "name": "Сергей",
@@ -135,7 +163,11 @@
             "to_film": {
                 "title": "Амели",
                 "year": "2001",
-                "poster_link": "amelie"
+                "country": "France",
+                "rating": 7,
+                "poster_link": "amelie",
+                "trailer_link": "",
+                "description": "История молодой женщины, которая решает изменить жизнь окружающих людей к лучшему."
             },
             "user": {
                 "name": "Ольга",
@@ -153,7 +185,11 @@
             "to_film": {
                 "title": "Изгой",
                 "year": "2000",
-                "poster_link": "cast-away"
+                "country": "USA",
+                "rating": 7,
+                "poster_link": "cast-away",
+                "trailer_link": "",
+                "description": "История выживания человека на необитаемом острове после авиакатастрофы."
             },
             "user": {
                 "name": "Максим",
@@ -163,4 +199,4 @@
             "comments": 4
         }
     ]
-  }
+}

@@ -1,0 +1,30 @@
+{
+  "data": [
+    {
+      "name": "Edward",
+      "lastName": "Norton",
+      "photo": "edward-norton"
+    },
+    {
+      "name": "Brad",
+      "lastName": "Pitt",
+      "photo": "brad-pitt"
+    },
+    {
+      "name": "Leonardo",
+      "lastName": "DiCaprio",
+      "photo": "dicaprio"
+    },
+    {
+      "name": "Quentin",
+      "lastName": "Tarantino",
+      "photo": "tarantino"
+    },
+    {
+      "name": "Christopher",
+      "lastName": "Nolan",
+      "photo": "nolan"
+    }
+  ]
+}
+

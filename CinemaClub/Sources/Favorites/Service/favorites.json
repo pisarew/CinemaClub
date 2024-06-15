@@ -1,0 +1,50 @@
+{
+  "data": [
+    {
+      "title": "Inception",
+      "year": "2010",
+      "country": "USA",
+      "rating": 9,
+      "poster_link": "inception",
+      "trailer_link": "",
+      "description": "A mind-bending thriller about dream invasion and manipulation."
+    },
+    {
+      "title": "The Dark Knight",
+      "year": "2008",
+      "country": "USA",
+      "rating": 9,
+      "poster_link": "dark-knight",
+      "trailer_link": "",
+      "description": "A gripping tale of Batman's battle against the Joker."
+    },
+    {
+      "title": "Interstellar",
+      "year": "2014",
+      "country": "USA",
+      "rating": 8,
+      "poster_link": "interstellar",
+      "trailer_link": "",
+      "description": "A visually stunning journey through space and time."
+    },
+    {
+      "title": "Fight Club",
+      "year": "1999",
+      "country": "USA",
+      "rating": 9,
+      "poster_link": "fight-club",
+      "trailer_link": "",
+      "description": "A dark and twisted story of identity and rebellion."
+    },
+    {
+      "title": "The Matrix",
+      "year": "1999",
+      "country": "USA",
+      "rating": 9,
+      "poster_link": "matrix",
+      "trailer_link": "",
+      "description": "A revolutionary sci-fi film about the nature of reality."
+    }
+  ]
+}
+

@@ -26,7 +26,11 @@ struct FilmPostDTO: Decodable {
 struct FilmDTO: Decodable {
     let title: String
     let year: String
-    let posterLink: String?
+    let country: String
+    let rating: Int
+    let posterLink: String
+    let trailerLink: String
+    let description: String
 }
 
 struct UserDTO: Decodable {
@@ -44,10 +48,19 @@ extension FilmPostResponseDTO {
             let date = dateFormatter.date(from: post.dt) ?? Date()
             
             return Post(
-                title: post.title, 
+                title: post.title,
+                
                 rating: post.rating,
                 author: User(phone: "", name: post.user.name, lastName: post.user.lastName, nickname: ""),
-                movie: Movie(title: post.toFilm.title, year: post.toFilm.year,  image: post.toFilm.posterLink ?? ""),
+                movie: Movie(
+                    title: post.toFilm.title,
+                    year: post.toFilm.year,
+                    country: post.toFilm.country,
+                    rating: post.toFilm.rating,
+                    image: post.toFilm.posterLink,
+                    kinopoiskLink: post.toFilm.trailerLink,
+                    description: ""
+                ),
                 date: date,
                 description: post.description,
                 likes: Int.random(in: 13...10000),

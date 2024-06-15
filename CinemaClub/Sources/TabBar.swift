@@ -1,24 +1,24 @@
 import SwiftUI
 
-struct Tabbar: View {
+struct TabBar: View {
     init() {
         UITabBar.appearance().unselectedItemTintColor = .systemGray3
     }
 
     var body: some View {
-           TabView {
-               HomeView()
-                   .tag(1)
-                   .tabItem {
-                       Image("home")
-                           .renderingMode(.template)
-                   }
-               Text("search")
-                   .tag(2)
-                   .tabItem {
-                       Image("discover")
-                           .renderingMode(.template)
-                   }
+        TabView {
+            HomeView()
+                .tag(1)
+                .tabItem {
+                    Image("home")
+                        .renderingMode(.template)
+                }
+            SearchView()
+                .tag(2)
+                .tabItem {
+                    Image("discover")
+                        .renderingMode(.template)
+                }
             Text("the creation of the post")
                 .tag(3)
                 .tabItem {
@@ -44,6 +44,6 @@ struct Tabbar: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        Tabbar()
+        TabBar()
     }
 }

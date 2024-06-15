@@ -20,10 +20,15 @@ struct Post: Identifiable {
     let comments: [Comment]
 }
 
-struct Movie {
+struct Movie: Identifiable {
+    let id = UUID()
     let title: String
     let year: String
+    let country: String
+    let rating: Int
     let image: String
+    let kinopoiskLink: String
+    let description: String
 }
 
 struct Comment: Identifiable {

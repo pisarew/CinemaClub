@@ -106,13 +106,19 @@ struct AuthorInfoBar: View {
         movie: Movie(
             title: "Бойцовский клуб",
             year: "1999",
-            image: "fight-club"
+            country: "USA",
+            rating: 9,
+            image: "fight-club",
+            kinopoiskLink: "",
+            description: ""
+            
         ),
         author: User(
             phone: "666",
             name: "Тайлер",
             lastName: "Дерден",
             nickname: "projectdestruction"
-        ), date: Date()
+        ),
+        date: Date()
     )
 }
