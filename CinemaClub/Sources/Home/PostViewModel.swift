@@ -14,7 +14,7 @@ protocol PostServiceProtocol {
 
 @MainActor
 final class PostViewModel: ObservableObject {
-    private let service: PostService
+    private let service: PostServiceProtocol
     @Published var posts: [Post]?
 
     init(service: PostServiceProtocol) {
