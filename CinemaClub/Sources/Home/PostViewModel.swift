@@ -7,16 +7,16 @@
 
 import Foundation
 
-protocol PostService {
+protocol PostServiceProtocol {
     func fetchData() async throws -> [Post]?
 }
 
 @Observable
 final class PostViewModel {
-    private let service: PostService
+    private let service: PostServiceProtocol
     var posts: [Post]?
     
-    init(service: PostService) {
+    init(service: PostServiceProtocol) {
         self.service = service
     }
     

@@ -8,7 +8,7 @@
 import Foundation
 import OSLog
 
-final class MockPostService: PostService {
+final class MockPostService: PostServiceProtocol {
     static let shared = MockPostService()
     
     private let decoder = JSONDecoder()
