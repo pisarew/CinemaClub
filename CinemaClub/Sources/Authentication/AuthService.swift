@@ -5,6 +5,7 @@
 //  Created by Глеб Писарев on 04.06.2024.
 //
 
+import FirebaseCore
 import FirebaseAuth
 
 final class AuthService {
@@ -65,17 +66,28 @@ final class AuthService {
                 )
                 return
             }
-            completion(
-                .success(
-                    User(
-                        phone: phoneNumber,
-                        name: "Тайлер",
-                        lastName: "Дерден",
-                        nickname: "projectmayhem"
-                    )
-                )
+            let user = User(
+                phone: phoneNumber,
+                name: "Тайлер",
+                lastName: "Дерден",
+                nickname: "projectmayhem"
             )
+            LocalStorageService.shared.saveUserProfile(user)
+            completion(.success(user))
         }
     }
-    
+
+    func fetchUserProfile() -> User? {
+        return LocalStorageService.shared.fetchUserProfile()
+    }
+
+    func logout(completion: @escaping (Result<Void, Error>) -> Void) {
+        do {
+            try Auth.auth().signOut()
+            LocalStorageService.shared.clearUserProfile()
+            completion(.success(()))
+        } catch {
+            completion(.failure(error))
+        }
+    }
 }
