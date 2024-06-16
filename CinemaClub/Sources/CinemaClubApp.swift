@@ -11,10 +11,29 @@ import SwiftUI
 struct CinemaClubApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    
+    @StateObject private var postViewModel = PostViewModel(service: MockPostService.shared)
+    @State private var isLoading = true
+
     var body: some Scene {
         WindowGroup {
-            TabBar()
+            if isLoading {
+                LoadingView()
+                    .onAppear {
+                        loadData()
+                    }
+            } else {
+                TabBar()
+                    .environmentObject(postViewModel)
+            }
+        }
+    }
+
+    private func loadData() {
+        Task {
+            await postViewModel.update()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                isLoading = false
+            }
         }
     }
 }

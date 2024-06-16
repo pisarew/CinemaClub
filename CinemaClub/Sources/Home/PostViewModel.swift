@@ -6,21 +6,26 @@
 //
 
 import Foundation
+import Combine
 
 protocol PostService {
     func fetchData() async throws -> [Post]?
 }
 
-@Observable
-final class PostViewModel {
+@MainActor
+final class PostViewModel: ObservableObject {
     private let service: PostService
-    var posts: [Post]?
+    @Published var posts: [Post]?
     
     init(service: PostService) {
         self.service = service
     }
     
     func update() async {
-        posts = try? await service.fetchData()
+        do {
+            posts = try await service.fetchData()
+        } catch {
+            print("Error fetching data: \(error.localizedDescription)")
+        }
     }
 }
