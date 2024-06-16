@@ -31,7 +31,7 @@ struct TabBar: View {
                     Image("heart")
                         .renderingMode(.template)
                 }
-            Text("profile")
+            ProfileView()
                 .tag(5)
                 .tabItem {
                     Image(systemName: "person.fill")

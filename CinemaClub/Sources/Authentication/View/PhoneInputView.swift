@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PhoneInputView: View {
-    @Bindable private var viewModel = AuthViewModel()
+    @ObservedObject private var viewModel = AuthViewModel()
     @State private var selectedCountryCode = "+7"
     @State private var phoneNumber = ""
     
