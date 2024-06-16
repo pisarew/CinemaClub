@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-protocol PostService {
+protocol PostServiceProtocol {
     func fetchData() async throws -> [Post]?
 }
 
@@ -16,8 +16,8 @@ protocol PostService {
 final class PostViewModel: ObservableObject {
     private let service: PostService
     @Published var posts: [Post]?
-    
-    init(service: PostService) {
+
+    init(service: PostServiceProtocol) {
         self.service = service
     }
     
