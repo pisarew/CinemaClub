@@ -1,3 +1,10 @@
+//
+//  TabBar.swift
+//  CinemaClub
+//
+//  Created by Мария Степанчук on 06.06.2024.
+//
+
 import SwiftUI
 
 struct TabBar: View {
@@ -25,13 +32,13 @@ struct TabBar: View {
                     Image(systemName: "plus.circle.fill")
                         .renderingMode(.template)
                 }
-            Text("Watch list")
+            FavoritesView()
                 .tag(4)
                 .tabItem {
                     Image("heart")
                         .renderingMode(.template)
                 }
-            Text("profile")
+            ProfileView()
                 .tag(5)
                 .tabItem {
                     Image(systemName: "person.fill")

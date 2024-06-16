@@ -7,14 +7,13 @@
 
 import Foundation
 
-final class MockFavoritesService: FavoritesServiceProtocol {
+final class MockFavoritesService: FavoriteslistServiceProtocol {
     
-    func fetchFavorites() -> [Movie]? {
-        return nil
+    func fetchFavorites() async throws -> [Movie] {
+        return []
     }
     
-    func fetchViewed() -> [Movie]? {
-        return nil
+    func fetchViewed() async throws -> [Movie] {
+        return []
     }
-    
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CodeInputView: View {
-    @Bindable var viewModel: AuthViewModel
+    @ObservedObject var viewModel: AuthViewModel
     var phoneNumber: String
     @State private var code: [String] = Array(repeating: "", count: 6)
     @FocusState private var focusedField: Int?
