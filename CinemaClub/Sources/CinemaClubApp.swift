@@ -13,6 +13,7 @@ struct CinemaClubApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var postViewModel = PostViewModel(service: MockPostService.shared)
     @State private var isLoading = true
+    @State private var isLoggedIn = UserDefaults.standard.isLoggedIn
 
     var body: some Scene {
         WindowGroup {
@@ -22,8 +23,12 @@ struct CinemaClubApp: App {
                         loadData()
                     }
             } else {
-                TabBar()
-                    .environmentObject(postViewModel)
+                if isLoggedIn {
+                    TabBar()
+                        .environmentObject(postViewModel)
+                } else {
+                    FirstLogin()
+                }
             }
         }
     }
